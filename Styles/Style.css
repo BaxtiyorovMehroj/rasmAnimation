@@ -57,8 +57,8 @@ span::before {
 
 @media(max-width:768px) {
     span::before {
-        width: 60px;
-        height: 60px;
+        width: 100px;
+        height: 100px;
         background-color: pink;
     }
 
@@ -74,8 +74,8 @@ span::before {
 
     @media (max-width: 480px) {
         span::before {
-            width: 40px;
-            height: 40px;
+            width: 70px;
+            height: 70px;
             background-color: #ff69b4;
         }
 

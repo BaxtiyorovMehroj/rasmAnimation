@@ -1,12 +1,11 @@
 //  yuklanganda sichqoncha harakati kuzatiladi
-document.addEventListener('mousemove', function (e) {
+function createImage(e) {
     let body = document.querySelector('body');
-    //spanni yaratdim
     let image = document.createElement('span');
 
-    //miwkaning pozitsiyasi
-    let x = e.offsetX;
-    let y = e.offsetY;
+    //miwkaning pozitsiyasi va telning 
+    let x = e.offsetX || e.touches[0].clientX;
+    let y = e.offsetY || e.touches[0].clientY;
 
     // yaratilgan spanni miwka bor yerga jonatamiz
     image.style.left = x + 'px';
@@ -31,6 +30,11 @@ document.addEventListener('mousemove', function (e) {
         image.remove();
     }, 1000)
 
-})
+}
 
+// Kompyuter sichqonchasi uchun
+document.addEventListener('mousemove', createImage);
+
+// Telefon (sensor) qurilmalari uchun
+document.addEventListener('touchmove', createImage);
 
